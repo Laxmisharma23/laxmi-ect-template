@@ -1,0 +1,9 @@
+          "WebServerInstance": {
+          "Type" : "AWS::EC2::Instance",
+          :
+          "Properties": {
+          :
+          "KeyName" : { "Name" : "laxmiEc2" },
+          :
+          }
+          },
