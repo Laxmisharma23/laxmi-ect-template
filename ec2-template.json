@@ -1,9 +1,13 @@
-          "WebServerInstance": {
-          "Type" : "AWS::EC2::Instance",
-          :
-          "Properties": {
-          :
-          "KeyName" : { "Name" : "laxmiEc2" },
-          :
-          }
-          },
+      "Ec2Instance" : {
+  "Type" : "AWS::EC2::Instance",
+  "Properties" : {
+    "ImageId" : { "ami-00c39f71452c08778" },
+    "KeyName" : { "MyKey" },
+    "NetworkInterfaces": [ {
+      "AssociatePublicIpAddress": "true",
+      "DeviceIndex": "0",
+      "GroupSet": [{ "Ref" : "myVPCEC2SecurityGroup" }],
+      "SubnetId": { "Ref" : "PublicSubnet" }
+    } ]
+  }
+}
